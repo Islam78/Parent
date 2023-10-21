@@ -1,3 +1,4 @@
+import { AuthenticationService } from './services/auth/authentication.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,5 +7,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'Parent-Assessment';
+  title = 'Islam-Assessment';
+  constructor(private auth: AuthenticationService) {
+  }
+
+  /**
+   * isUserLoggedIn
+   * @returns boolean
+   */
+  isUserLoggedIn(): boolean {
+    return !!this.auth.getToken() && this.auth.getToken() != "null";
+  }
+
 }
