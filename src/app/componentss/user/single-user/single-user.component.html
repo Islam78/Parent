@@ -1,0 +1,63 @@
+<div class="User">
+    <div class="container">
+        <!-- back icon -->
+        <a href="javaScript:void(0)" routerLink="/user/list">
+            <i class="pi pi-arrow-left"></i>
+        </a>
+
+        <!-- Form Header -->
+        <h2 class="fw-bold">User Details</h2>
+        <p class="text-color text-weight">Welcome back! there is your all details.</p>
+
+        <!-- Form -->
+        <form [formGroup]="singleUserForm" (ngSubmit)="onSubmit()">
+            <img [src]="singleUserForm.value.avatar" alt="User Image" class="user-image">
+            <!-- Email Input Field -->
+            <div class="mt-14"> <!-- Adjusted margin to separate elements -->
+                <label for="InputEmail1" class="form-label text-color text-weight">Email</label>
+                <input *ngIf="userParam !== 'view'" formControlName="email" type="email" class="form-control"
+                    id="InputEmail1" />
+                <!-- in view case -->
+                <span *ngIf="userParam === 'view'">
+                    {{singleUserForm.value.email}}
+                </span>
+
+                <div *ngIf="singleUserForm.get('email')!.invalid && singleUserForm.get('email')!.touched"
+                    class="input-error">
+                    Please enter your email address
+                </div>
+            </div>
+            <!-- first_name Input Field -->
+            <div class="mt-14"> <!-- Adjusted margin to separate elements -->
+                <label for="Inputfirst_name" class="form-label text-color text-weight">First name</label>
+                <input *ngIf="userParam !== 'view'" formControlName="first_name" type="text" class="form-control"
+                    id="Inputfirst_name" />
+                <!-- in view case -->
+                <span *ngIf="userParam === 'view'">
+                    {{singleUserForm.value.first_name}}
+                </span>
+
+                <div *ngIf="singleUserForm.get('first_name')!.invalid && singleUserForm.get('first_name')!.touched"
+                    class="input-error">
+                    Please enter your First name
+                </div>
+            </div>
+            <!-- last_name Input Field -->
+            <div class="mt-14"> <!-- Adjusted margin to separate elements -->
+                <label for="Inputlast_name" class="form-label text-color text-weight">last name</label>
+                <input *ngIf="userParam !== 'view'" formControlName="last_name" type="text" class="form-control"
+                    id="Inputlast_name" />
+                <!-- in view case -->
+                <span *ngIf="userParam === 'view'">
+                    {{singleUserForm.value.last_name}}
+                </span>
+                <div *ngIf="singleUserForm.get('last_name')!.invalid && singleUserForm.get('last_name')!.touched"
+                    class="input-error">
+                    Please enter your last name
+                </div>
+            </div>
+            <!-- Update Button -->
+            <button *ngIf="userParam !== 'view'" class="btn-sign mt-14" type="submit">Update</button>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,113 @@
+/* my parent class */
+.User {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background-color: #f4f4f4;
+
+    a {
+        color: #1F4068;
+        text-decoration: none;
+
+        i {
+            font-size: 1rem;
+        }
+    }
+
+    h2 {
+
+        font-weight: bold;
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    .user-image {
+        display: block;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        margin: 10px auto;
+        border: 2px solid #1F4068;
+        object-fit: cover;
+    }
+
+    p {
+        color: #888;
+    }
+
+    /* Style the form container */
+    .container {
+        background-color: #fff;
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 400px;
+    }
+
+    /* Adjust the label styles to display on separate lines */
+    .form-label {
+        font-weight: 600;
+        display: block;
+        margin-bottom: 8px;
+    }
+
+    /* Style the form input fields to be full width */
+    .form-control {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+        transition: border-color 0.3s, box-shadow 0.3s;
+    }
+
+    /* Add styles for invalid inputs */
+    .form-control.is-invalid {
+        border-color: #dc3545;
+        box-shadow: 0 0 5px rgba(220, 53, 69, 0.5);
+    }
+
+    /* Style the "Sign in" button */
+    .btn-sign {
+        width: 100%;
+        background-color: #1F4068;
+        color: white;
+        border: none;
+        padding: 12px;
+        border-radius: 4px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    .btn-sign:hover {
+        background-color: #0f3054;
+    }
+}
+
+
+/* Style the error messages */
+.text-danger {
+    color: #dc3545;
+    font-size: 14px;
+}
+
+/* Style the "Forget password" link */
+.text-decoration-none {
+    color: #1F4068;
+    font-weight: 400;
+}
+
+/* Style the error messages */
+.input-error {
+    color: #dc3545;
+    font-size: 14px;
+    margin-top: 4px;
+}
+
+/* global margin */
+.mt-14 {
+    margin-top: 14px;
+}
