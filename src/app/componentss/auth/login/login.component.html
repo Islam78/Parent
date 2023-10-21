@@ -1,0 +1,29 @@
+<div class="login">
+    <div class="container">
+        <!-- Login Form Header -->
+        <h2 class="fw-bold">Log in to your account</h2>
+        <p class="text-color text-weight">Welcome back! Please enter your details.</p>
+        <!-- Login Form -->
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <!-- Email Input Field -->
+            <div class="mt-14"> <!-- Adjusted margin to separate elements -->
+                <label for="InputEmail1" class="form-label text-color text-weight">Email</label>
+                <input formControlName="email" type="email" class="form-control" id="InputEmail1" placeholder="eve.holt@reqres.in" />
+                <div *ngIf="loginForm.get('email')!.invalid && loginForm.get('email')!.touched" class="input-error">
+                    Please enter your email address
+                </div>
+            </div>
+            <!-- Password Input Field -->
+            <div class="mt-14"> <!-- Adjusted margin to separate elements -->
+                <label for="InputPassword" class="form-label text-color text-weight">Password</label>
+                <input formControlName="password" type="password" class="form-control" id="InputPassword" placeholder="cityslicka" />
+                <div *ngIf="loginForm.get('password')!.invalid && loginForm.get('password')!.touched"
+                    class="input-error">
+                    Please enter your password
+                </div>
+            </div>
+            <!-- Sign-In Button -->
+            <button class="btn-sign mt-14" type="submit">Sign in</button>
+        </form>
+    </div>
+</div>
