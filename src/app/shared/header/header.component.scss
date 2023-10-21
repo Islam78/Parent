@@ -1,0 +1,24 @@
+.navbar {
+    padding: 12px;
+
+    /* my logo style */
+    .logo-text {
+        font-size: 24px;
+        font-weight: bold;
+        color: #1F4068;
+    }
+
+    .navbar-brand {
+        margin-right: auto; // Push the logo to the left
+    }
+
+    .btn-danger {
+        margin-left: auto; // Push the button to the right
+    }
+
+    .p-button.p-button-icon-only.p-button-rounded {
+        border-radius: 50%;
+        height: 2.5rem;
+        width: 2.5rem;
+    }
+}
