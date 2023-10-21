@@ -1,0 +1,31 @@
+<div class="newUser">
+    <div class="container">
+        <a href="javaScript:void(0)" routerLink="/user/list">
+            <i class="pi pi-arrow-left"></i>
+        </a>
+        <!-- create Form Header -->
+        <h2 class="fw-bold">Create New User</h2>
+        <p class="text-color text-weight">Please enter your details.</p>
+        <!-- create Form -->
+        <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+            <!-- name Input Field -->
+            <div class="mt-14"> <!-- Adjusted margin to separate elements -->
+                <label for="Inputname1" class="form-label text-color text-weight">name</label>
+                <input formControlName="name" type="text" class="form-control" id="Inputname1" />
+                <div *ngIf="userForm.get('name')!.invalid && userForm.get('name')!.touched" class="input-error">
+                    Please enter your name
+                </div>
+            </div>
+            <!-- job Input Field -->
+            <div class="mt-14"> <!-- Adjusted margin to separate elements -->
+                <label for="Inputjob" class="form-label text-color text-weight">job</label>
+                <input formControlName="job" type="text" class="form-control" id="Inputjob" />
+                <div *ngIf="userForm.get('job')!.invalid && userForm.get('job')!.touched" class="input-error">
+                    Please enter your job
+                </div>
+            </div>
+            <!-- Sign-In Button -->
+            <button class="btn-sign mt-14" type="submit">Create User</button>
+        </form>
+    </div>
+</div>
